@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Proyectos - Portafolio de Juan Pérez</title>
+    <meta name="description" content="Una galería de mis proyectos de ciencia de datos, análisis y desarrollo.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Asegúrate que la ruta sea correcta (ej. 'style.css' o 'css/style.css') -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==== Header / Navbar ==== -->
+    <header>
+        <div class="container">
+            <a href="index2.0.html" class="logo">Juan Carlos Muñoz</a>
+            <nav>
+                <ul>
+                    <li><a href="index2.0.html">About me</a></li>
+                    <li><a href="proyectos2.0.html" class="active">Projects</a></li>
+                    <li><a href="ejercicios2.0.html">Exercises</a></li>
+                    <!-- <li><a href="ensayos2.0.html">Essays</a></li>
+                    <li><a href="videos2.0.html">Videos</a></li>-->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==== Contenido Principal ==== -->
+    <main>
+        <section id="proyectos">
+            <div class="container">
+                
+                <div class="page-header">
+                    <h1>My <span>Portfolio</span></h1>
+                    <p>
+                        Here you can see some of my projects. There's also a brief description outlining the technologies used, their purpose, and  insights.
+                    </p>
+                </div>
+
+                <!-- Galería de Tarjetas (Grid) -->
+                <!-- AHORA SON "BOTONES" QUE ACTIVAN EL MODAL -->
+                <div class="proyectos-grid">
+
+                    <!-- Tarjeta de Proyecto 1 (Trigger) -->
+                    <!-- data-project-id DEBE COINCIDIR CON EL ID EN EL JS -->
+                    <div class="proyecto-card" data-project-id="proyecto1">
+                        <img src="images/Dasboard.png" alt="(NLP)">
+                        <div class="proyecto-card-content">
+                            <h3>MINE-OS: Operational Intelligence System</h3>
+                            <span class="ver-mas-cta">See more details</span>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Proyecto 2 (Trigger) -->
+                    <div class="proyecto-card" data-project-id="proyecto2">
+                        <img src="images/nvidia.png" alt="Business value analysis: NVIDIA">
+                        <div class="proyecto-card-content">
+                            <h3>Business value analysis: NVIDIA</h3>
+                            <span class="ver-mas-cta">See more details</span>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Proyecto 3 (Trigger) -->
+                    <div class="proyecto-card" data-project-id="proyecto3">
+                        <img src="images/obra.png" alt="Civil Works Cost Prediction">
+                        <div class="proyecto-card-content">
+                            <h3>Civil Works Cost Prediction</h3>
+                            <span class="ver-mas-cta">See more details</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==== Footer ==== -->
+    <footer>
+        <div class="container">
+            <h2>Let's talk.</h2>
+            <p>I'm always open to connecting, discussing new projects or opportunities.</p>
+            <a href="mailto:tu-email@dominio.com" class="footer-email">carlos434190@gmail.com</a>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/juan-carlos-mu%C3%B1oz-meza-20a958322/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://github.com/carlosdatasc" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+            <p class="copyright">
+                <!-- MODIFICA AQUÍ: Tu nombre -->
+                &copy; <span id="current-year">2025</span> Juan Carlos Muñoz. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- ==== ESTRUCTURA DEL MODAL (OCULTO) ==== -->
+    <div id="project-modal-overlay" class="modal-overlay modal-hidden"></div>
+    
+    <div id="project-modal-container" class="modal-container modal-hidden">
+        <!-- Botón de Cerrar -->
+        <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+        
+        <!-- Contenido del Modal (se rellena con JS) -->
+        <div class="modal-header">
+            <img id="modal-image" src="" alt="Imagen de portada del proyecto">
+            <h2 id="modal-title"></h2>
+        </div>
+        
+        <div class="modal-content">
+            
+            <h3>Topics</h3>
+            <div id="modal-tags" class="modal-tags">
+                <!-- Se rellena con JS -->
+            </div>
+
+            <h3>Why was it done?</h3>
+            <p id="modal-why"></p>
+
+            <h3>What was done</h3>
+            <p id="modal-what"></p>
+
+            <h3>Technologies</h3>
+            <div id="modal-tech" class="modal-tags">
+                <!-- Se rellena con JS -->
+            </div>
+
+            <div id="modal-links" class="modal-links">
+                <!-- Se rellena con JS -->
+            </div>
+        </div>
+    </div>
+    <!-- ==== FIN DEL MODAL ==== -->
+
+<script src="main.js" defer></script>    
+</body>

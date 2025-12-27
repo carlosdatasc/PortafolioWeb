@@ -1,0 +1,772 @@
+ejercicio.html
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Ejercicios - Mi Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Pequeño truco para el modo oscuro si se prefiere por defecto, o se puede controlar con JS */
+        /* .dark {
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+            color: rgb(209 213 219 / var(--tw-bg-opacity));
+        } */
+    </style>
+</head>
+
+ensayos.html
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensayos - Mi Portafolio</title>
+    <!-- Script de Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Aplicamos la fuente Inter a todo el cuerpo */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Pequeño ajuste para el ancla del navbar */
+        .target-fix {
+            display: block;
+            position: relative;
+            top: -6rem; /* Ajusta esto según la altura de tu navbar fijo */
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+index.html
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- MODIFICA AQUÍ: El título de la pestaña del navegador -->
+    <title>Juan Pérez - Desarrollador de Software</title>
+    
+    <!-- Importamos la fuente "Inter" de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+    <style>
+        /* --- 1. Variables Globales y Reseteo --- */
+        :root {
+            --color-fondo: #121212; /* Negro muy oscuro */
+            --color-superficie: #1e1e1e; /* Negro un poco más claro (para tarjetas) */
+            --color-primario: #007bff; /* Azul brillante */
+            --color-primario-glow: rgba(0, 123, 255, 0.5); /* Resplandor azul */
+            --color-texto-principal: #e0e0e0; /* Gris claro */
+            --color-texto-secundario: #a0a0a0; /* Gris medio */
+            --color-borde: #333;
+            --transition-speed: 0.3s;
+        }
+
+        /* Reseteo Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto-principal);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        h2.section-title {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2.section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-primario);
+            border-radius: 2px;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 17px;
+            color: var(--color-texto-secundario);
+        }
+
+        a {
+            color: var(--color-primario);
+            text-decoration: none;
+            transition: color var(--transition-speed) ease, 
+                        text-shadow var(--transition-speed) ease;
+        }
+        a:hover {
+            color: #409eff;
+            text-shadow: 0 0 8px var(--color-primario-glow);
+        }
+
+        /* --- 2. Estilos del Navbar (Header) --- */
+        header {
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-borde);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin-left: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-texto-secundario);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color var(--transition-speed) ease, text-shadow var(--transition-speed) ease;
+        }
+
+        nav a:hover {
+            color: var(--color-primario);
+            text-shadow: 0 0 8px var(--color-primario-glow);
+        }
+
+        nav a.active {
+            color: var(--color-primario);
+            font-weight: 700;
+        }
+
+        /* --- 3. Estilos de la Sección "Hero" --- */
+        #hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--color-fondo) 70%, #1a1a1a 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 10s ease infinite;
+            color: var(--color-texto-principal);
+            padding: 100px 0;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--color-superficie);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px; 
+        }
+
+        #hero h1 {
+            font-size: 54px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 0 0 10px var(--color-primario-glow);
+        }
+
+        #hero .subtitle {
+            font-size: 22px;
+            color: var(--color-texto-secundario);
+            margin-bottom: 25px;
+        }
+        
+        .hero-socials {
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .hero-socials a {
+            display: inline-block;
+            margin-right: 20px;
+            color: var(--color-texto-secundario);
+            transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+
+        .hero-socials a:hover {
+            transform: scale(1.15);
+            color: var(--color-primario);
+        }
+
+        .hero-socials svg {
+            width: 30px;
+            height: 30px;
+            fill: currentColor;
+        }
+        
+        /* Bloque de Código Falso */
+        .hero-code-block {
+            background-color: var(--color-superficie);
+            border: 1px solid var(--color-borde);
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero-code-block::before {
+            content: ' ';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            width: 12px;
+            height: 12px;
+            background: #ff5f56;
+            border-radius: 50%;
+            box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+        }
+        
+        .hero-code-block pre {
+            margin-top: 30px;
+        }
+        
+        .code-keyword { color: #c778dd; }
+        .code-function { color: #61afef; }
+        .code-string { color: #98c379; }
+        .code-comment { color: #5c6370; }
+        .code-variable { color: #e5c07b; }
+
+        /* --- 4. Estilos de la Sección "Sobre Mí" --- */
+        #sobre-mi {
+            padding: 100px 0;
+            background-color: #1a1a1a;
+        }
+        
+        /* ================================== */
+        /* ==     NUEVA ESTRUCTURA         == */
+        /* ================================== */
+        .sobre-mi-contenido {
+            display: grid;
+            /* 2 columnas */
+            grid-template-columns: 1fr 1fr;
+            gap: 60px; /* Espacio uniforme */
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: flex-start;
+        }
+        
+        /* Los items de la cuadrícula superior (Bio y Formación) */
+        .biografia, .formacion-combinada {
+            background-color: var(--color-superficie);
+            border: 1px solid var(--color-borde);
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%; /* Hacemos que tengan la misma altura */
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .biografia:hover, .formacion-combinada:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--color-primario);
+        }
+
+        /* La Biografía tiene un estilo un poco diferente */
+        .biografia {
+            text-align: left;
+            padding: 20px;
+            background: none;
+            border: none;
+            box-shadow: none;
+            height: auto; /* La biografía no necesita altura fija */
+        }
+        .biografia:hover {
+            transform: none;
+            box-shadow: none;
+            border: none;
+        }
+
+        .biografia h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* Botón de CV */
+        .btn-cv {
+            display: inline-block;
+            background-color: var(--color-primario);
+            color: #ffffff;
+            padding: 12px 25px;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color var(--transition-speed) ease, 
+                        transform var(--transition-speed) ease, 
+                        box-shadow var(--transition-speed) ease;
+        }
+
+        .btn-cv:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px var(--color-primario-glow);
+        }
+        
+        /* Títulos de las sub-secciones (Hobbies y Formación) */
+        .hobbies h3, .formacion-combinada h3 {
+            font-size: 24px;
+            color: #ffffff;
+            border-bottom: 2px solid var(--color-borde);
+            padding-bottom: 10px;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        /* ===================================== */
+        /* == ESTILOS SECCIÓN COMBINADA       == */
+        /* ===================================== */
+
+        .formacion-combinada {
+            /* Esta ya no ocupa 1/-1 */
+            height: 100%; /* Asegura que coincida con la altura de la biografía si es necesario */
+        }
+        
+        .formacion-lista {
+            list-style: none;
+        }
+
+        .formacion-item {
+            position: relative;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--color-borde);
+        }
+        
+        /* Quitamos borde y margen al último item de la lista */
+        .formacion-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .formacion-item strong {
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-texto-principal);
+        }
+
+        .formacion-item span {
+            display: block;
+            font-size: 15px;
+            color: var(--color-texto-secundario);
+            margin-bottom: 15px; /* Espacio antes de los iconos de skills */
+        }
+        
+        /* Lista horizontal de habilidades aprendidas */
+        .habilidades-aprendidas {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        /* Reutilizamos el .skill-item pero lo hacemos más pequeño */
+        .skill-item {
+            background-color: var(--color-fondo); 
+            border: 1px solid var(--color-borde);
+            border-radius: 8px;
+            padding: 15px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--color-texto-secundario);
+            transition: transform var(--transition-speed) ease, 
+                        border-color var(--transition-speed) ease,
+                        box-shadow var(--transition-speed) ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primario);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            color: var(--color-texto-principal);
+        }
+
+        .skill-item svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            fill: var(--color-texto-secundario);
+            transition: fill var(--transition-speed) ease;
+        }
+
+        .skill-item:hover svg {
+            fill: var(--color-primario);
+        }
+
+        /* Colores específicos */
+        .skill-item:hover .icon-python { fill: #FFD43B; }
+        .skill-item:hover .icon-sql { fill: #00758F; }
+        .skill-item:hover .icon-html { fill: #E44D26; }
+        .skill-item:hover .icon-css { fill: #1572B6; }
+        .skill-item:hover .icon-git { fill: #F05032; }
+
+        /* == ESTA ES LA CLAVE == */
+        /* Hacemos los iconos más pequeños DENTRO de la lista de formación */
+        .formacion-item .skill-item {
+            padding: 5px 12px;
+            font-size: 13px;
+            flex-direction: row; /* Icono y texto en horizontal */
+            gap: 8px;
+        }
+
+        .formacion-item .skill-item svg {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 0; /* Quitamos el margen vertical */
+        }
+
+
+        /* ======================================== */
+        /* --- 4.3. Hobbies (Estilo Galería NUEVO) --- */
+        /* ======================================== */
+        
+        .hobbies {
+            /* NUEVO: Ocupa todo el ancho */
+            grid-column: 1 / -1; 
+            height: auto; /* Altura automática */
+            background-color: var(--color-superficie);
+            border: 1px solid var(--color-borde);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .hobbies:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: var(--color-primario);
+        }
+
+        .hobbies-gallery {
+            display: grid;
+            /* Crea una cuadrícula flexible que se adapta */
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .hobby-card {
+            background-color: var(--color-fondo); /* Fondo más oscuro que la tarjeta principal */
+            border-radius: 8px;
+            overflow: hidden; /* Para que la imagen respete los bordes */
+            text-align: center;
+            border: 1px solid var(--color-borde);
+            transition: transform var(--transition-speed) ease,
+                        box-shadow var(--transition-speed) ease;
+        }
+        
+        .hobby-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .hobby-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover; /* Asegura que la imagen cubra el espacio */
+            display: block;
+        }
+        
+        .hobby-card h4 {
+            font-size: 16px;
+            font-weight: 500;
+            padding: 15px 10px;
+            color: var(--color-texto-principal);
+            margin-bottom: 0; /* Sobrescribir el h4 global */
+        }
+
+
+        /* --- 5. Estilos del Footer --- */
+        footer {
+            padding: 80px 0 40px 0;
+            background-color: var(--color-fondo);
+            border-top: 1px solid var(--color-borde);
+            text-align: center;
+        }
+
+        footer h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        footer p {
+            font-size: 18px;
+            color: var(--color-texto-secundario);
+            margin-bottom: 30px;
+        }
+
+        .footer-email {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--color-primario);
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid var(--color-borde);
+            border-radius: 5px;
+            background-color: var(--color-superficie);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .footer-email:hover {
+            background-color: var(--color-primario);
+            color: #ffffff;
+            border-color: var(--color-primario);
+            text-shadow: none;
+            box-shadow: 0 0 15px var(--color-primario-glow);
+        }
+        
+        .footer-socials {
+            margin-top: 30px;
+        }
+
+        .footer-socials a {
+            display: inline-block;
+            margin: 0 15px;
+            color: var(--color-texto-secundario);
+            transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+
+        .footer-socials a:hover {
+            transform: scale(1.1);
+            color: var(--color-primario);
+        }
+        
+        .footer-socials svg {
+            width: 28px;
+            height: 28px;
+            fill: currentColor;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        /* --- 6. Responsive (Móvil) --- */
+        @media (max-width: 992px) {
+            /* Para tablets, pasamos la cuadrícula a 1 columna */
+            .sobre-mi-contenido {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .biografia {
+                text-align: center;
+                background: none;
+                border: none;
+                padding: 0;
+            }
+            .formacion-combinada {
+                height: auto; /* Altura automática en móvil */
+            }
+            .formacion-combinada h3, .hobbies h3 {
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            
+            nav ul {
+                display: none;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-text {
+                text-align: center;
+            }
+            .profile-pic {
+                margin: 0 auto 20px auto;
+            }
+            .hero-socials {
+                text-align: center;
+            }
+            .hero-socials a {
+                margin: 0 15px;
+            }
+            .hero-code-block {
+                display: none;
+            }
+            #hero h1 {
+                font-size: 40px;
+            }
+            #hero .subtitle {
+                font-size: 18px;
+            }
+        }
+
+    </style>
+</head>
+
+proyectos.html
+
+<head>
+    <meta charset="UTF-M">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Proyectos - Portafolio de [Tu Nombre]</title>
+    <meta name="description" content="Una galería de mis proyectos de ciencia de datos, análisis y desarrollo.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Configuración de Tailwind (para la fuente) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Pequeño ajuste para el resaltado de texto */
+        ::selection {
+            background-color: #22d3ee; /* Color cian de Tailwind */
+            color: #083344; /* Un color de texto oscuro para contraste */
+        }
+    </style>
+</head>
+
+videos.html
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos | Próximamente</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración PERSONALIZADA de Tailwind para estandarizar el color primario -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Define el color 'primary' usando la paleta 'indigo' para estandarizar
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed', // <--- Este es el color principal
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                            950: '#2f1361',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Configuración para usar la fuente Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>

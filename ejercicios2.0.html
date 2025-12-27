@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título de la pestaña -->
+    <title>Laboratorio de Ejercicios - Mi Portafolio</title>
+    
+    <!-- 1. Importamos la fuente "Inter" de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- 2. Vinculamos nuestra hoja de estilos UNIFICADA -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- ==== Navbar ==== -->
+    <header>
+        <div class="container">
+            <!-- MODIFICA AQUÍ: Tu logo/nombre -->
+            <a href="index.html" class="logo">Juan Carlos Muñoz</a>
+            
+            <nav>
+                <ul>
+                    <!-- NOTA: La clase "active" está en "Inicio" -->
+                    <li><a href="index2.0.html">About me</a></li>
+                    <li><a href="proyectos2.0.html">Projects</a></li>
+                    <li><a href="ejercicios2.0.html"class="active">Exercises</a></li>
+                    <!-- <li><a href="ensayos2.0.html">Essays</a></li>
+                    <li><a href="videos2.0.html">Videos</a></li>-->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==== Contenido Principal: Laboratorio de Ejercicios ==== -->
+     <main class="page-main-content">
+        <div class="container ejercicios-container">
+            
+            <!-- Título e Introducción -->
+            <div class="ejercicios-header">
+                <h1>
+                    Exercise Laboratory
+                </h1>
+                <p>
+                    Here you can see how I have developed mathematical and programming concepts through small projects.
+                </p>
+            </div>
+
+            <!-- Lista de Ejercicios Agrupados (AHORA ES UN GRID) -->
+            <!-- Contenedor del Grid -->
+            <div class="ejercicios-grid">
+
+                <!-- ===== Tarjeta de Tema: Python ===== -->
+                <section class="ejercicio-card-tema">
+                    <h2>
+                        Python
+                    </h2>
+                    
+                    <!-- Lista de ejercicios de Python -->
+                    <ul class="ejercicios-lista">
+                        
+                        <!-- Ejercicio: Pandas -->
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    Matplotlib
+                                </h3>
+                                <p>
+                                    Custom bar, line, and scatter charts, adjusting axes, titles, and legends.
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="https://github.com/carlosdatasc/data-practice-projects/tree/main/Basic%20of%20matplotlib" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                    GitHub
+                                </a>
+                            </div>
+                        </li>
+
+                        <!-- Ejercicio: Seaborn -->
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    Statistics
+                                </h3>
+                                <p>
+                                    Using NumPy and Pandas, I explored data manipulation, descriptive statistics, and core analytical techniques to strengthen my foundation in data analysis.
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="https://github.com/carlosdatasc/data-practice-projects/tree/main/Statistics" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                    GitHub
+                                </a>
+                            </div>
+                        </li>
+
+                        <!-- Ejercicio: Matplotlib -->
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    Lineal Regression
+                                </h3>
+                                <p>
+                                    I focused on building and evaluating a **Multiple Linear Regression Model** to understand how different independent variables influence a target variable. The main goal was to assess model performance and interpret key evaluation metrics.
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="https://github.com/carlosdatasc/data-practice-projects/tree/main/Lineal%20Regression" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                    GitHub
+                                </a>
+                            </div>
+                        </li>
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    ML Basics
+                                </h3>
+                                <p>
+                                    I explored the fundamentals of **Machine Learning**, focusing specifically on **binary classification**.
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="https://github.com/carlosdatasc/data-practice-projects/tree/main/ML%20basics" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                    GitHub
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- ===== Tarjeta de Tema: SQL ===== -->
+                <section class="ejercicio-card-tema">
+                    <h2>
+                        SQL
+                    </h2>
+                    
+                    <ul class="ejercicios-lista">
+                        
+                        <!-- Ejercicio: JOINs -->
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    Video Games Queries
+                                </h3>
+                                <p>
+                                    This project focuses on analyzing video game sales data to uncover trends, identify the most popular genres, and determine the top-selling games in different regions. The analysis is performed using SQL queries, providing valuable insights into the video game industry's performance over the years.
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="https://github.com/carlosdatasc/SQL_Projects/tree/main/video_games" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                    GitHub
+                                </a>
+                            </div>
+                        </li>
+
+                        <!-- Ejercicio: Funciones de Ventana -->
+                         <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    SQL Building Analytical Structures
+                                </h3>
+                                <p>
+                                    A concise, reproducible recap of this week’s practice. The goal was to translate theory into hands‑on SQL using a tiny business dataset (customers, products, orders, order_items) and to answer practical questions with CTEs, window functions, and simple segmentation.
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="https://github.com/carlosdatasc/SQL_Projects/tree/main/SQL%20Professional%20Building%20Complex%20Analytical%20Structures" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                    GitHub
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    Advanced SQL Analytical Queries
+                                </h3>
+                                <p>
+                                    a complete set of SQL advanced practice exercises, designed to reinforce analytical thinking and the most important concepts for real-world data analysis.
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="https://github.com/carlosdatasc/SQL_Projects/tree/main/Advanced%20SQL%20Mastering%20Analytical%20Queries" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                    GitHub
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- ===== Tarjeta de Tema: Estadística ===== -->
+                
+                <!-- ===== Tarjeta de Tema: Estadística ===== -->
+                <section class="ejercicio-card-tema">
+                    <h2>
+                        Excel
+                    </h2>
+                    
+                    <ul class="ejercicios-lista">
+                        
+                        <!-- Ejercicio: Test de Hipótesis -->
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    Sums and percentages
+                                </h3>
+                                <p>
+                                    On based in a database I realized some calculations to find percentages about behaviour students
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="archivos/sums and percentages.xlsx" class="btn-cv" download>
+                                    Download Excel
+                                </a>
+                            </div>
+                        </li>
+                        <!-- Ejercicio: Test de Hipótesis -->
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    Clean data
+                                </h3>
+                                <p>
+                                    In this excel I made the cleaning and extracting for date data which had a lot of mistakes since wrong formats until units without any sense
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="archivos/Clean data.xlsx" class="btn-cv" download>
+                                    Download Excel
+                                </a>
+                            </div>
+                        </li>
+                        <!-- Ejercicio: Test de Hipótesis -->
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    Engine costs
+                                </h3>
+                                <p>
+                                    In this small project I used this powerful, simple and useful tool called tables, to extract relevant information about costs.
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="archivos/Costeos.xlsx" class="btn-cv" download>
+                                    Download Excel
+                                </a>
+                            </div>
+                        </li>
+                        <!-- Ejercicio: Test de Hipótesis -->
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    Olimpic Carrers
+                                </h3>
+                                <p>
+                                    In this Excel with some help of these powerful commands XLOOKUP and VLOOKUP found some useful information
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="archivos/Carreras Olímpicas.xlsx" class="btn-cv" download>
+                                    Download Excel
+                                </a>
+                            </div>
+                        </li>
+                        <!-- Ejercicio: Test de Hipótesis -->
+                        <li class="ejercicio-item">
+                            <div>
+                                <h3>
+                                    Pivot Tables
+                                </h3>
+                                <p>
+                                    Pivot tables allow us to break down a huge amount of information into key takeaways.
+                                </p>
+                            </div>
+                            <div class="ejercicio-item-link">
+                                <a href="archivos/Pivot Tables.xlsx" class="btn-cv" download>
+                                    Download Excel
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>   
+            </div><!-- Fin de .ejercicios-grid -->
+        </div>
+    </main>
+
+    <!-- ==== Footer ==== -->
+    <footer>
+        <div class="container">
+            <h2>Let's talk.</h2>
+            <p>I'm always open to connecting, discussing new projects or opportunities.</p>
+            
+            <!-- MODIFICA AQUÍ: Tu email -->
+            <a href="mailto:tu-email@dominio.com" class="footer-email">carlos434190@gmail.com</a>
+            
+            <div class="footer-socials">
+                <!-- MODIFICA AQUÍ: Tus enlaces -->
+                <a href="https://www.linkedin.com/in/juan-carlos-mu%C3%B1oz-meza-20a958322/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="https://github.com/carlosdatasc" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.109-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+            
+            <p class="copyright">
+                <!-- MODIFICA AQUÍ: Tu nombre -->
+                &copy; <span id="current-year">2025</span> Juan Carlos Muñoz. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,1230 @@
+/* ============================================
+--- FASE 3: HOJA DE ESTILOS PRINCIPAL ---
+--- PARTE 1: GLOBALES Y RESETEO
+============================================
+*/
+
+/* --- 1. Variables Globales y Reseteo --- */
+:root {
+    --color-fondo: #121212; /* Negro muy oscuro */
+    --color-superficie: #1e1e1e; /* Negro un poco más claro (para tarjetas) */
+    --color-primario: #007bff; /* Azul brillante */
+    --color-primario-glow: rgba(0, 123, 255, 0.5); /* Resplandor azul */
+    --color-texto-principal: #e0e0e0; /* Gris claro */
+    --color-texto-secundario: #a0a0a0; /* Gris medio */
+    --color-borde: #333;
+    --transition-speed: 0.3s;
+}
+
+/* Reseteo Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+h2.section-title {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+h2.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primario);
+    border-radius: 2px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: var(--color-texto-secundario);
+}
+
+a {
+    color: var(--color-primario);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease, 
+                text-shadow var(--transition-speed) ease;
+}
+a:hover {
+    color: #409eff;
+    text-shadow: 0 0 8px var(--color-primario-glow);
+}
+
+/* ============================================
+--- PARTE 2: NAVBAR (HEADER) Y FOOTER
+============================================
+*/
+
+/* --- 2. Estilos del Navbar (Header) --- */
+header {
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-borde);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-left: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-texto-secundario);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color var(--transition-speed) ease, text-shadow var(--transition-speed) ease;
+}
+
+nav a:hover {
+    color: var(--color-primario);
+    text-shadow: 0 0 8px var(--color-primario-glow);
+}
+
+nav a.active {
+    color: var(--color-primario);
+    font-weight: 700;
+}
+
+/* --- 5. Estilos del Footer --- */
+footer {
+    padding: 80px 0 40px 0;
+    background-color: var(--color-fondo);
+    border-top: 1px solid var(--color-borde);
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+footer p {
+    font-size: 18px;
+    color: var(--color-texto-secundario);
+    margin-bottom: 30px;
+}
+
+.footer-email {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-primario);
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+    background-color: var(--color-superficie);
+    transition: all var(--transition-speed) ease;
+}
+
+.footer-email:hover {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    border-color: var(--color-primario);
+    text-shadow: none;
+    box-shadow: 0 0 15px var(--color-primario-glow);
+}
+
+.footer-socials {
+    margin-top: 30px;
+}
+
+.footer-socials a {
+    display: inline-block;
+    margin: 0 15px;
+    color: var(--color-texto-secundario);
+    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.footer-socials a:hover {
+    transform: scale(1.1);
+    color: var(--color-primario);
+}
+
+.footer-socials svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}
+
+.copyright {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ============================================
+--- PARTE 3: ESTILOS DE INDEX.HTML
+============================================
+*/
+
+/* --- 3. Estilos de la Sección "Hero" (index.html) --- */
+#hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, var(--color-fondo) 70%, #1a1a1a 100%);
+    background-size: 200% 200%;
+    animation: gradientFlow 10s ease infinite;
+    color: var(--color-texto-principal);
+    padding: 100px 0;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    text-align: left;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-superficie);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px; 
+}
+
+#hero h1 {
+    font-size: 54px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 0 0 10px var(--color-primario-glow);
+}
+
+#hero .subtitle {
+    font-size: 22px;
+    color: var(--color-texto-secundario);
+    margin-bottom: 25px;
+}
+
+.hero-socials {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.hero-socials a {
+    display: inline-block;
+    margin-right: 20px;
+    color: var(--color-texto-secundario);
+    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.hero-socials a:hover {
+    transform: scale(1.15);
+    color: var(--color-primario);
+}
+
+.hero-socials svg {
+    width: 30px;
+    height: 30px;
+    fill: currentColor;
+}
+
+/* Bloque de Código Falso */
+.hero-code-block {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 20px;
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-code-block::before {
+    content: ' ';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 12px;
+    height: 12px;
+    background: #ff5f56;
+    border-radius: 50%;
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+}
+
+.hero-code-block pre {
+    margin-top: 30px;
+}
+
+.code-keyword { color: #c778dd; }
+.code-function { color: #61afef; }
+.code-string { color: #98c379; }
+.code-comment { color: #5c6370; }
+.code-variable { color: #e5c07b; }
+
+/* --- 4. Estilos de la Sección "Sobre Mí" (index.html) --- */
+#sobre-mi {
+    padding: 100px 0;
+    background-color: #1a1a1a;
+}
+
+.sobre-mi-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.biografia, .formacion-combinada {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 30px;
+    height: 100%;
+    transition: all var(--transition-speed) ease;
+}
+
+.biografia:hover, .formacion-combinada:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-primario);
+}
+
+.biografia {
+    text-align: left;
+    padding: 20px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    height: auto;
+}
+.biografia:hover {
+    transform: none;
+    box-shadow: none;
+    border: none;
+}
+
+.biografia h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.btn-cv {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    padding: 12px 25px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color var(--transition-speed) ease, 
+                transform var(--transition-speed) ease, 
+                box-shadow var(--transition-speed) ease;
+}
+
+.btn-cv:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--color-primario-glow);
+}
+
+.hobbies h3, .formacion-combinada h3 {
+    font-size: 24px;
+    color: #ffffff;
+    border-bottom: 2px solid var(--color-borde);
+    padding-bottom: 10px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.formacion-combinada {
+    height: 100%;
+}
+
+.formacion-lista {
+    list-style: none;
+}
+
+.formacion-item {
+    position: relative;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.formacion-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.formacion-item strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-texto-principal);
+}
+
+.formacion-item span {
+    display: block;
+    font-size: 15px;
+    color: var(--color-texto-secundario);
+    margin-bottom: 15px;
+}
+
+.habilidades-aprendidas {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-item {
+    background-color: var(--color-fondo); 
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-texto-secundario);
+    transition: transform var(--transition-speed) ease, 
+                border-color var(--transition-speed) ease,
+                box-shadow var(--transition-speed) ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primario);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: var(--color-texto-principal);
+}
+
+.skill-item svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    fill: var(--color-texto-secundario);
+    transition: fill var(--transition-speed) ease;
+}
+
+.skill-item:hover svg {
+    fill: var(--color-primario);
+}
+
+/* Colores específicos */
+.skill-item:hover .icon-python { fill: #FFD43B; }
+.skill-item:hover .icon-sql { fill: #00758F; }
+.skill-item:hover .icon-html { fill: #E44D26; }
+.skill-item:hover .icon-css { fill: #1572B6; }
+.skill-item:hover .icon-git { fill: #F05032; }
+
+.formacion-item .skill-item {
+    padding: 5px 12px;
+    font-size: 13px;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.formacion-item .skill-item svg {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 0;
+}
+
+/* --- 4.3. Hobbies (Estilo Galería NUEVO) --- */
+.hobbies {
+    grid-column: 1 / -1; 
+    height: auto;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 30px;
+    transition: all var(--transition-speed) ease;
+    text-align: left;
+}
+
+.hobbies:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-primario);
+}
+
+/* ================================== */
+/* ==     AQUÍ ESTÁ LA CORRECCIÓN  == */
+/* ================================== */
+.hobbies-gallery {
+    display: flex; /* CAMBIO: De grid a flex */
+    flex-wrap: wrap; /* NUEVO: Para que bajen de línea */
+    justify-content: center; /* NUEVO: Para centrar las tarjetas */
+    gap: 20px;
+}
+
+.hobby-card {
+    width: 200px; /* NUEVO: Damos un tamaño fijo a las tarjetas */
+    background-color: var(--color-fondo);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid var(--color-borde);
+    transition: transform var(--transition-speed) ease,
+                box-shadow var(--transition-speed) ease;
+}
+/* ================================== */
+/* ==     FIN DE LA CORRECCIÓN     == */
+/* ================================== */
+
+
+.hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hobby-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+.hobby-card h4 {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 10px;
+    color: var(--color-texto-principal);
+    margin-bottom: 0;
+}
+
+/* ============================================
+--- PARTE 4: ESTILOS DE PÁGINAS (VIDEOS)
+============================================
+*/
+
+/* --- Estilo para el header de la página --- */
+.page-header {
+    text-align: center;
+    padding: 80px 0 40px 0;
+}
+
+.page-header h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 20px;
+    color: var(--color-texto-secundario);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+/* --- Botón especial de YouTube (Rojo) --- */
+.btn-youtube {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: #FF0000; /* Color Rojo YouTube */
+    color: #ffffff;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-youtube:hover {
+    background-color: #cc0000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+    text-shadow: none; /* Quitamos sombra de texto azul */
+}
+
+/* LA MAGIA: Damos tamaño al SVG DENTRO del botón */
+.btn-youtube svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+
+/* --- Galería de Videos --- */
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding-bottom: 100px;
+}
+
+.video-card {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    overflow: hidden; /* Para que la imagen respete los bordes */
+    transition: all var(--transition-speed) ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--color-primario);
+}
+
+.video-thumbnail {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Proporción de video */
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--color-texto-secundario);
+}
+
+/* LA MAGIA 2: Damos tamaño al SVG DENTRO de la miniatura */
+.video-thumbnail svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 15px;
+    fill: var(--color-primario);
+    opacity: 0.6;
+}
+
+.video-thumbnail h4 {
+    color: var(--color-texto-principal);
+    font-size: 18px;
+}
+
+.video-card-content {
+    padding: 20px;
+}
+
+.video-card-content h3 {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.video-card-content p {
+    font-size: 16px;
+    color: var(--color-texto-secundario);
+    margin-bottom: 0;
+}
+
+/* --- Contenedor Responsivo para Video --- */
+.video-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 (9 / 16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    background-color: #000; /* Fondo negro mientras carga */
+}
+
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Quita el borde feo del iframe */
+}
+
+/* ============================================
+--- PARTE 5: ESTILOS RESPONSIVOS (MÓVIL)
+============================================
+*/
+
+/* --- 6. Responsive (Móvil) --- */
+@media (max-width: 992px) {
+    .sobre-mi-contenido {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .biografia {
+        text-align: center;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+    .formacion-combinada {
+        height: auto;
+    }
+    .formacion-combinada h3, .hobbies h3 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    nav ul {
+        display: none; /* Oculta el menú en móviles (luego haremos un menú hamburguesa) */
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+    .hero-text {
+        text-align: center;
+    }
+    .profile-pic {
+        margin: 0 auto 20px auto;
+    }
+    .hero-socials {
+        text-align: center;
+    }
+    .hero-socials a {
+        margin: 0 15px;
+    }
+    .hero-code-block {
+        display: none;
+    }
+    #hero h1 {
+        font-size: 40px;
+    }
+    #hero .subtitle {
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+--- PARTE 6: ESTILOS PÁGINA EJERCICIOS
+============================================
+*/
+
+.page-main-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.ejercicios-container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ejercicios-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ejercicios-header h1 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--color-primario); /* Color primario para el título */
+}
+
+.ejercicios-header p {
+    font-size: 20px;
+    color: var(--color-texto-secundario);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- NUEVA ESTRUCTURA DE GRID --- */
+/* Contenedor principal de la cuadrícula de tarjetas */
+.ejercicios-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 30px; /* Espacio entre las tarjetas */
+}
+
+
+/* La tarjeta individual para cada TEMA (Python, SQL, etc.) */
+.ejercicio-card-tema {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    transition: all var(--transition-speed) ease;
+}
+
+.ejercicio-card-tema:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primario);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+
+.ejercicio-card-tema h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+/* --- FIN NUEVA ESTRUCTURA --- */
+
+
+.ejercicios-lista {
+    list-style: none;
+}
+
+.ejercicio-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 20px; /* Cambiado de padding-top a padding-bottom */
+    margin-bottom: 20px; /* Añadido margen inferior */
+    border-bottom: 1px solid var(--color-borde); /* Cambiado de border-top a border-bottom */
+}
+
+.ejercicio-item:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none; /* El último item no tiene borde */
+}
+
+/* Layout responsivo para cada item */
+@media (min-width: 640px) {
+    .ejercicio-item {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+
+.ejercicio-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin-bottom: 5px;
+}
+
+.ejercicio-item p {
+    font-size: 16px;
+    color: var(--color-texto-secundario);
+    margin-bottom: 0;
+    line-height: 1.5;
+    flex: 1; /* Ocupa el espacio disponible */
+}
+
+.ejercicio-item-link {
+    flex-shrink: 0; /* Evita que el botón se encoja */
+    margin-left: 15px;
+}
+
+.btn-github {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-github:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--color-primario-glow);
+    text-shadow: none;
+    color: #ffffff;
+}
+
+/* ============================================
+--- PARTE 7: ESTILOS PÁGINA PROYECTOS
+============================================
+*/
+
+/* Contenedor del Título */
+.page-header {
+    text-align: center;
+    padding: 80px 0 40px 0;
+}
+
+.page-header h1 { /* Título principal */
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.page-header h1 span { /* Para la palabra "Proyectos" */
+    color: var(--color-primario);
+}
+
+.page-header p { /* Subtítulo */
+    font-size: 20px;
+    color: var(--color-texto-secundario);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+}
+
+/* Galería de Tarjetas */
+.proyectos-grid {
+    display: grid;
+    /* Esto crea columnas automáticas que se ajustan:
+       - Mínimo 300px de ancho
+       - Máximo 1fr (se reparten el espacio)
+    */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding-bottom: 100px;
+}
+
+.proyecto-card {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    overflow: hidden; /* Para que la imagen respete los bordes */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all var(--transition-speed) ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-color: var(--color-primario);
+}
+
+.proyecto-card img {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+    display: block;
+    background-color: #000; /* Fondo por si la imagen tarda en cargar */
+}
+
+.proyecto-card-content {
+    padding: 25px;
+}
+
+.proyecto-card-content h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.proyecto-card-content p {
+    font-size: 16px;
+    color: var(--color-texto-secundario);
+    margin-bottom: 25px; /* Más espacio antes de las tecnologías */
+    min-height: 50px; /* Opcional: para alinear tarjetas */
+}
+
+.proyecto-card-content .tecnologias {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primario);
+    margin-top: -15px; /* Sube un poco */
+    margin-bottom: 25px;
+    display: block; /* Asegura que esté en su propia línea */
+}
+
+.proyecto-card-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Botón primario (azul) */
+.btn-primario {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--color-primario);
+    transition: all var(--transition-speed) ease;
+}
+.btn-primario:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--color-primario-glow);
+    text-shadow: none;
+    color: #ffffff;
+}
+
+/* Botón secundario (solo texto) */
+.btn-secundario {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--color-primario);
+    border: 1px solid transparent; /* para alinear */
+    padding: 10px 0px; /* para alinear */
+}
+
+/* Botón deshabilitado */
+.btn-deshabilitado {
+    display: inline-block;
+    background-color: #333;
+    color: #777;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    cursor: not-allowed;
+}
+
+/* --- PARTE 8: ESTILOS DEL MODAL DE PROYECTOS
+============================================
+*/
+
+/* 1. Ajustes a la tarjeta de proyecto (ahora es un trigger) */
+.proyecto-card {
+    cursor: pointer; /* El cursor cambia a "manita" */
+    position: relative; /* Para el texto "Ver Detalles" */
+}
+
+.proyecto-card-content h3 {
+    margin-bottom: 0; /* Quita el margen de abajo */
+}
+
+/* Oculta los párrafos, tecnologías y links de la tarjeta */
+.proyecto-card-content p,
+.proyecto-card-content .tecnologias,
+.proyecto-card-links {
+    display: none; 
+}
+
+/* Nuevo "botón" de Ver Detalles */
+.ver-mas-cta {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin-top: 10px;
+    transition: all var(--transition-speed) ease;
+}
+
+.proyecto-card:hover .ver-mas-cta {
+    text-shadow: 0 0 8px var(--color-primario-glow);
+    letter-spacing: 0.5px;
+}
+
+
+/* 2. El fondo oscuro (Overlay) */
+.modal-overlay {
+    position: fixed; /* Cubre toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Negro semi-transparente */
+    backdrop-filter: blur(5px);
+    z-index: 2000; /* Por encima de todo */
+    transition: opacity 0.3s ease;
+}
+
+/* 3. El contenedor del Modal (la "ventana") */
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+    
+    width: 90%;
+    max-width: 900px; /* Ancho máximo */
+    max-height: 90vh; /* Altura máxima (90% de la pantalla) */
+    overflow-y: auto; /* SCROLL si el contenido es largo */
+    
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    z-index: 2001; /* Por encima del overlay */
+    
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* 4. Clases para Ocultar/Mostrar */
+.modal-hidden {
+    opacity: 0;
+    pointer-events: none; /* No se puede hacer clic cuando está oculto */
+}
+
+.modal-container.modal-hidden {
+    transform: translate(-50%, -45%); /* Pequeña animación al salir */
+}
+
+/* 5. Botón de Cerrar (X) */
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color: var(--color-texto-secundario);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 10; /* Encima del contenido */
+}
+
+.modal-close-btn:hover {
+    color: var(--color-primario);
+    transform: scale(1.1) rotate(90deg);
+}
+
+/* 6. Contenido del Modal */
+.modal-header {
+    width: 100%;
+    height: 300px; /* Altura de la imagen de portada */
+    position: relative;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.modal-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0; /* Bordes redondeados solo arriba */
+}
+
+.modal-header h2 {
+    /* Título sobre la imagen */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 30px 40px;
+    font-size: 36px;
+    font-weight: 900;
+    color: #ffffff;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.modal-content {
+    padding: 30px 40px; /* Espaciado interno */
+}
+
+.modal-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primario);
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 8px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 17px;
+    color: var(--color-texto-secundario);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Estilo para las "píldoras" (Tags y Tecnologías) */
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.modal-tag-item {
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    color: var(--color-texto-secundario);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Enlaces (Botones) dentro del modal */
+.modal-links {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Evita que el scroll del body se muestre cuando el modal está abierto */
+body.modal-open {
+    overflow: hidden;
+}
