@@ -738,8 +738,28 @@ footer p {
 
 @media (max-width: 768px) {
     
+    header .container {
+    flex-direction: column; /* Pone el logo arriba y los botones abajo */
+    gap: 15px;
+    }
+
     nav ul {
-        display: none; /* Oculta el menú en móviles (luego haremos un menú hamburguesa) */
+        display: flex; /* Asegura que se vea */
+        flex-wrap: wrap; /* Si no caben en una línea, bajan a la siguiente */
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    nav li {
+        margin: 0 10px; /* Separa los botones entre sí */
+    }
+
+    #hero h1 {
+    font-size: 36px; /* Un tamaño más cómodo para celular */
+    }
+    
+    #hero .subtitle {
+        font-size: 18px;
     }
     
     .hero-container {
@@ -1227,4 +1247,5 @@ footer p {
 /* Evita que el scroll del body se muestre cuando el modal está abierto */
 body.modal-open {
     overflow: hidden;
+
 }
